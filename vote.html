@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vote Validator</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-image: url("https://media.istockphoto.com/id/1267153161/vector/different-people-voting-hands-are-putting-paper-ballots-to-the-election-box-democratic.jpg?s=612x612&w=0&k=20&c=TvCNpCJiwVAJDef6c9C9rxTmOD_Rzt7Dn-bt_-jqUMk=");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        form {
+            width: 350px;
+            padding: 30px;
+
+            background: rgba(255, 255, 255, 0.9);
+
+            border-radius: 15px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0 0 10px;
+        }
+
+        input {
+            padding: 12px;
+            font-size: 16px;
+
+            border: 1px solid gray;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 12px;
+            font-size: 16px;
+
+            background-color: #333;
+            color: white;
+
+            border: none;
+            border-radius: 8px;
+
+            cursor: pointer;
+        }
+
+        #Answer {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form>
+
+        <h2>Vote Validator</h2>
+
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <input type="number" id="age" placeholder="Enter your age">
+
+        <input type="text" id="nationality" placeholder="Enter your nationality">
+
+        <button type="button" onclick="vote()">Submit</button>
+
+        <p id="Answer"></p>
+
+    </form>
+
+
+    <script>
+
+        function vote() {
+
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var nationality = document.getElementById("nationality").value;
+
+            var Answer = document.getElementById("Answer");
+
+            if (age >= 18 && nationality.toLowerCase() == "indian") {
+
+                Answer.innerHTML = name + " is eligible to vote";
+
+            }
+
+            else {
+
+                Answer.innerHTML = name + " is not eligible to vote";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
